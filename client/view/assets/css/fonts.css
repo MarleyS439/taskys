@@ -1,0 +1,11 @@
+/* Fontes */
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Inter-Italic';
+    src: url(../fonts/Inter-Italic-VariableFont_opsz\,wght.ttf);
+}
