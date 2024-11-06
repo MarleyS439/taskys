@@ -1,4 +1,4 @@
-![Logotipo Taskys](https://gitgub.com/taskys/client/views/assets/images/Banner.png)
+![Logotipo Taskys](https://github.com/MarleyS439/taskys/blob/master/client/view/assets/images/Banner.png)
 # Taskys 
 
 ## Software de gerenciamento de tarefas
