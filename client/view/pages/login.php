@@ -6,8 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Marley de S. Santos">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Faça Login no Taskys - Gerencia suas tarefas">
+    <meta name="keywords" content="Taskys, Tarefas, Colaboratividade, Aplicativo Web de Gestão de Tarefas, Organizador">
+
+    <!-- Color scheme -->
+    <meta name="theme-color" content="#f9D252">
 
     <!-- Styles -->
     <link rel="stylesheet" href="../assets/css/login.css">
@@ -16,7 +19,7 @@
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 
     <!-- Title -->
-    <title>Login</title>
+    <title>Login no Taskys</title>
 </head>
 
 <body>
