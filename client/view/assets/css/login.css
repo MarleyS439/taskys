@@ -2,7 +2,10 @@
 @import url(default.css);
 @import url(animations.css);
 
-@media screen and (max-width: 768px) and (orientation: portrait) {
+/* Mobile - até 768px (48em) */
+@media (max-width: 48em) {
+
+    /* Estilos gerais para dispositivos móveis */
     body {
         padding: 5%;
         display: flex;
@@ -128,244 +131,672 @@
     .copy a:hover {
         text-decoration: underline;
     }
-}
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    body {
-        padding: 1% 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
+    /* Modo retrato específico */
+    @media (orientation: portrait) {
+        /* Estilos para dispositivos móveis em modo retrato */
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .image {
-        display: none;
-    }
-
-    .image img {
-        width: 100%;
-    }
-
-    .logotipo {
-        display: flex;
-        padding: 0% 10%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .logotipo img {
-        width: 60%;
-    }
-
-    .login {
-        padding: 2% 0%;
-    }
-
-    .box-login {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5% 2%;
-        margin: 0% 15%;
-        border-radius: 12px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-
-    .box-login form {
-        width: 100%;
-        padding: 5%;
-    }
-
-    .inputs {
-        margin: 15px 0px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .inputs input {
-        padding: 12px;
-        border-radius: 12px;
-        border: none;
-        background-color: var(--color-light-gray);
-        transition: 180ms ease-in-out;
-    }
-
-    input:focus {
-        outline: 1px solid var(--color-yellow) !important;
-        outline-offset: 0 !important;
-    }
-
-    .inputs button {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        background-color: var(--color-yellow);
-        color: var(--color-black);
-        font-weight: bold;
-        border-radius: 12px;
-        cursor: pointer;
-    }
-
-    .forgot {
-        display: flex;
-        justify-content: center;
-    }
-
-    .forgot a {
-        color: var(--color-black);
-        text-decoration: none;
-    }
-
-    .forgot a:hover {
-        text-decoration: underline;
-    }
-
-    /* Copy */
-    .copy {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .copy p {
-        color: var(--color-gray);
-    }
-
-    .copy a {
-        text-decoration: none;
-        color: var(--color-gray);
-    }
-
-    .copy a:hover {
-        text-decoration: underline;
+    /* Modo paisagem específico */
+    @media (orientation: landscape) {
+        /* Estilos para dispositivos móveis em modo paisagem */
     }
 }
 
-@media screen and (min-width: 1024px) and (orientation: landscape) {
-    body {
-        padding: 1% 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
+/* Tablet - entre 769px (48.06em) e 1023px (63.9375em) */
+@media (min-width: 48.06em) and (max-width: 63.9375em) {
+    /* Estilos gerais para tablets */
+
+    @media (orientation: portrait) {
+
+        /* Estilos específicos para tablets em modo retrato */
+        body {
+            padding: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image {
+            display: none;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .logotipo {
+            display: flex;
+            padding: 0% 5%;
+            margin-bottom: 5%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logotipo img {
+            width: 90%;
+        }
+
+        .login {
+            padding: 2% 0%;
+        }
+
+        .box-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5% 2%;
+            margin: 5% 0%;
+            border-radius: 12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .box-login .title h2 {
+            margin-bottom: 25px;
+        }
+
+        .box-login form {
+            width: 100%;
+            padding: 5%;
+        }
+
+        .inputs {
+            margin: 15px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inputs input {
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background-color: var(--color-light-gray);
+            transition: 180ms ease-in-out;
+        }
+
+        input:focus {
+            outline: 1px solid var(--color-yellow) !important;
+            outline-offset: 0 !important;
+        }
+
+        .inputs button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: var(--color-yellow);
+            color: var(--color-black);
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .forgot {
+            display: flex;
+            justify-content: center;
+        }
+
+        .forgot a {
+            color: var(--color-black);
+            text-decoration: none;
+        }
+
+        .forgot a:hover {
+            text-decoration: underline;
+        }
+
+        /* Copy */
+        .copy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10% 0%;
+        }
+
+        .copy p {
+            color: var(--color-gray);
+            text-align: center;
+            padding: 5px 30px;
+        }
+
+        .copy a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+
+        .copy a:hover {
+            text-decoration: underline;
+        }
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    @media (orientation: landscape) {
+
+        /* Estilos específicos para tablets em modo paisagem */
+        body {
+            padding: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image {
+            display: none;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .logotipo {
+            display: flex;
+            padding: 0% 5%;
+            margin-bottom: 5%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logotipo img {
+            width: 90%;
+        }
+
+        .login {
+            padding: 2% 0%;
+        }
+
+        .box-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5% 2%;
+            margin: 5% 0%;
+            border-radius: 12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .box-login .title h2 {
+            margin-bottom: 25px;
+        }
+
+        .box-login form {
+            width: 100%;
+            padding: 5%;
+        }
+
+        .inputs {
+            margin: 15px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inputs input {
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background-color: var(--color-light-gray);
+            transition: 180ms ease-in-out;
+        }
+
+        input:focus {
+            outline: 1px solid var(--color-yellow) !important;
+            outline-offset: 0 !important;
+        }
+
+        .inputs button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: var(--color-yellow);
+            color: var(--color-black);
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .forgot {
+            display: flex;
+            justify-content: center;
+        }
+
+        .forgot a {
+            color: var(--color-black);
+            text-decoration: none;
+        }
+
+        .forgot a:hover {
+            text-decoration: underline;
+        }
+
+        /* Copy */
+        .copy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10% 0%;
+        }
+
+        .copy p {
+            color: var(--color-gray);
+            text-align: center;
+            padding: 5px 30px;
+        }
+
+        .copy a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+
+        .copy a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Desktop - entre 1024px (64em) e 1215px (75.9375em) */
+@media (min-width: 64em) and (max-width: 75.9375em) {
+    /* Estilos gerais para desktops */
+
+    @media (orientation: portrait) {
+        /* Estilos específicos para desktops em modo retrato */
     }
 
-    .image {
-        width: 80%;
+    @media (orientation: landscape) {
+
+        /* Estilos específicos para desktops em modo paisagem */
+        body {
+            padding: 1% 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image {
+            width: 80%;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .logotipo {
+            display: flex;
+            padding: 0% 10%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logotipo img {
+            width: 60%;
+        }
+
+        .login {
+            padding: 2% 0%;
+        }
+
+        .box-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5% 2%;
+            margin: 0% 15%;
+            border-radius: 12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .box-login form {
+            width: 100%;
+            padding: 5%;
+        }
+
+        .inputs {
+            margin: 15px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inputs input {
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background-color: var(--color-light-gray);
+            transition: 180ms ease-in-out;
+        }
+
+        input:focus {
+            outline: 1px solid var(--color-yellow) !important;
+            outline-offset: 0 !important;
+        }
+
+        .inputs button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: var(--color-yellow);
+            color: var(--color-black);
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .forgot {
+            display: flex;
+            justify-content: center;
+        }
+
+        .forgot a {
+            color: var(--color-black);
+            text-decoration: none;
+        }
+
+        .forgot a:hover {
+            text-decoration: underline;
+        }
+
+        /* Copy */
+        .copy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .copy p {
+            color: var(--color-gray);
+        }
+
+        .copy a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+
+        .copy a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Widescreen - entre 1216px (76em) e 1407px (87.9375em) */
+@media (min-width: 76em) and (max-width: 87.9375em) {
+    /* Estilos gerais para telas widescreen */
+
+    @media (orientation: portrait) {
+        /* Estilos específicos para telas widescreen em modo retrato */
     }
 
-    .image img {
-        width: 100%;
+    @media (orientation: landscape) {
+
+        /* Estilos específicos para telas widescreen em modo paisagem */
+        body {
+            padding: 1% 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image {
+            width: 80%;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .logotipo {
+            display: flex;
+            padding: 0% 10%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logotipo img {
+            width: 60%;
+        }
+
+        .login {
+            padding: 2% 0%;
+        }
+
+        .box-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5% 2%;
+            margin: 0% 15%;
+            border-radius: 12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .box-login form {
+            width: 100%;
+            padding: 5%;
+        }
+
+        .inputs {
+            margin: 15px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inputs input {
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background-color: var(--color-light-gray);
+            transition: 180ms ease-in-out;
+        }
+
+        input:focus {
+            outline: 1px solid var(--color-yellow) !important;
+            outline-offset: 0 !important;
+        }
+
+        .inputs button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: var(--color-yellow);
+            color: var(--color-black);
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .forgot {
+            display: flex;
+            justify-content: center;
+        }
+
+        .forgot a {
+            color: var(--color-black);
+            text-decoration: none;
+        }
+
+        .forgot a:hover {
+            text-decoration: underline;
+        }
+
+        /* Copy */
+        .copy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .copy p {
+            color: var(--color-gray);
+        }
+
+        .copy a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+
+        .copy a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* FullHD - 1408px (88em) e acima */
+@media (min-width: 88em) {
+    /* Estilos gerais para telas FullHD e superiores */
+
+    @media (orientation: portrait) {
+        /* Estilos específicos para telas FullHD e superiores em modo retrato */
     }
 
-    .logotipo {
-        display: flex;
-        padding: 0% 10%;
-        justify-content: center;
-        align-items: center;
-    }
+    @media (orientation: landscape) {
 
-    .logotipo img {
-        width: 60%;
-    }
+        /* Estilos específicos para telas FullHD e superiores em modo paisagem */
+        body {
+            padding: 1% 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
 
-    .login {
-        padding: 2% 0%;
-    }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .box-login {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5% 2%;
-        margin: 0% 15%;
-        border-radius: 12px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
+        .image {
+            width: 80%;
+        }
 
-    .box-login form {
-        width: 100%;
-        padding: 5%;
-    }
+        .image img {
+            width: 100%;
+        }
 
-    .inputs {
-        margin: 15px 0px;
-        display: flex;
-        flex-direction: column;
-    }
+        .logotipo {
+            display: flex;
+            padding: 0% 10%;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .inputs input {
-        padding: 12px;
-        border-radius: 12px;
-        border: none;
-        background-color: var(--color-light-gray);
-        transition: 180ms ease-in-out;
-    }
+        .logotipo img {
+            width: 60%;
+        }
 
-    input:focus {
-        outline: 1px solid var(--color-yellow) !important;
-        outline-offset: 0 !important;
-    }
+        .login {
+            padding: 2% 0%;
+        }
 
-    .inputs button {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        background-color: var(--color-yellow);
-        color: var(--color-black);
-        font-weight: bold;
-        border-radius: 12px;
-        cursor: pointer;
-    }
+        .box-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5% 2%;
+            margin: 0% 15%;
+            border-radius: 12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
 
-    .forgot {
-        display: flex;
-        justify-content: center;
-    }
+        .box-login form {
+            width: 100%;
+            padding: 5%;
+        }
 
-    .forgot a {
-        color: var(--color-black);
-        text-decoration: none;
-    }
+        .inputs {
+            margin: 15px 0px;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .forgot a:hover {
-        text-decoration: underline;
-    }
+        .inputs input {
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background-color: var(--color-light-gray);
+            transition: 180ms ease-in-out;
+        }
 
-    /* Copy */
-    .copy {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        input:focus {
+            outline: 1px solid var(--color-yellow) !important;
+            outline-offset: 0 !important;
+        }
 
-    .copy p {
-        color: var(--color-gray);
-    }
+        .inputs button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: var(--color-yellow);
+            color: var(--color-black);
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+        }
 
-    .copy a {
-        text-decoration: none;
-        color: var(--color-gray);
-    }
+        .forgot {
+            display: flex;
+            justify-content: center;
+        }
 
-    .copy a:hover {
-        text-decoration: underline;
+        .forgot a {
+            color: var(--color-black);
+            text-decoration: none;
+        }
+
+        .forgot a:hover {
+            text-decoration: underline;
+        }
+
+        /* Copy */
+        .copy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .copy p {
+            color: var(--color-gray);
+        }
+
+        .copy a {
+            text-decoration: none;
+            color: var(--color-gray);
+        }
+
+        .copy a:hover {
+            text-decoration: underline;
+        }
     }
 }

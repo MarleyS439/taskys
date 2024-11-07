@@ -1,0 +1,66 @@
+/* Mobile - até 768px (48em) */
+@media (max-width: 48em) {
+    /* Estilos gerais para dispositivos móveis */
+
+    /* Modo retrato específico */
+    @media (orientation: portrait) {
+        /* Estilos para dispositivos móveis em modo retrato */
+    }
+
+    /* Modo paisagem específico */
+    @media (orientation: landscape) {
+        /* Estilos para dispositivos móveis em modo paisagem */
+    }
+}
+
+/* Tablet - entre 769px (48.06em) e 1023px (63.9375em) */
+@media (min-width: 48.06em) and (max-width: 63.9375em) {
+    /* Estilos gerais para tablets */
+
+    @media (orientation: portrait) {
+        /* Estilos específicos para tablets em modo retrato */
+    }
+
+    @media (orientation: landscape) {
+        /* Estilos específicos para tablets em modo paisagem */
+    }
+}
+
+/* Desktop - entre 1024px (64em) e 1215px (75.9375em) */
+@media (min-width: 64em) and (max-width: 75.9375em) {
+    /* Estilos gerais para desktops */
+
+    @media (orientation: portrait) {
+        /* Estilos específicos para desktops em modo retrato */
+    }
+
+    @media (orientation: landscape) {
+        /* Estilos específicos para desktops em modo paisagem */
+    }
+}
+
+/* Widescreen - entre 1216px (76em) e 1407px (87.9375em) */
+@media (min-width: 76em) and (max-width: 87.9375em) {
+    /* Estilos gerais para telas widescreen */
+
+    @media (orientation: portrait) {
+        /* Estilos específicos para telas widescreen em modo retrato */
+    }
+
+    @media (orientation: landscape) {
+        /* Estilos específicos para telas widescreen em modo paisagem */
+    }
+}
+
+/* FullHD - 1408px (88em) e acima */
+@media (min-width: 88em) {
+    /* Estilos gerais para telas FullHD e superiores */
+
+    @media (orientation: portrait) {
+        /* Estilos específicos para telas FullHD e superiores em modo retrato */
+    }
+
+    @media (orientation: landscape) {
+        /* Estilos específicos para telas FullHD e superiores em modo paisagem */
+    }
+}
