@@ -34,7 +34,8 @@
 
         <div class="item">
             <label for="titulo">Título / Resumo</label>
-            <input type="text" id="titulo">
+            <input type="text" id="titulo"
+                   placeholder="Ex.: Enviar o relatório de P.I, Finalizar atividade de Prog. Web">
         </div>
 
         <div class="col">
@@ -53,7 +54,7 @@
 
         <div class="item text">
             <label for="descricao">Descrição</label>
-            <textarea id="descricao"></textarea>
+            <textarea id="descricao" placeholder="Detalhe esta tarefa"></textarea>
         </div>
     </div>
 
@@ -64,6 +65,7 @@
     </div>
 </dialog>
 
+<!--Modal de sair -->
 <dialog class="modal-item mini-modal" id="modal-sair">
     <div class="modal-body">
         <div class="title">
@@ -81,6 +83,69 @@
     </div>
 </dialog>
 
+<!--Modal de editar lista-->
+<dialog class="modal-item mini-modal" id="modal-editar-lista">
+    <div class="title">
+        <h1>Editar lista</h1>
+    </div>
+
+    <div class="input-modal">
+        <label for="nome-lista">Nome da lista</label>
+        <input type="text" id="nome-lista" placeholder="Dê um nome a esta lista" required>
+    </div>
+
+    <div class="btns-modal">
+        <button type="button" id="cancelar-editar-lista">Cancelar</button>
+        <button type="button" id="salvar-edicao-lista">Salvar</button>
+    </div>
+</dialog>
+
+<!--Modal para excluir lista-->
+<dialog class="modal-item mini-modal" id="modal-excluir">
+    <div class="title">
+        <h1>Excluir lista?</h1>
+    </div>
+
+    <div class="">
+        <p>Deseja excluir a lista e todas as tarefas atreladas?</p>
+    </div>
+
+    <div class="btns-modal">
+        <button type="button" id="cancelar-excluir-lista" onclick="document.getElementById('modal-excluir').close();">
+            Cancelar
+        </button>
+        <button type="button" id="confirmar-excluir-lista">Confirmar</button>
+        <input type="text" value="" hidden id="idLista-Excluir">
+    </div>
+</dialog>
+
+<!-- Modal para criar lista -->
+<dialog class="modal-item mini-modal" id="modal-criar-lista">
+    <div class="title">
+        <h1>Criar nova lista</h1>
+    </div>
+
+    <div class="input-modal">
+        <label for="nome-lista-criar">Nova lista</label>
+        <input
+                type="text"
+                id="nome-lista-criar"
+                placeholder="Nome da lista"
+                maxlength="45"
+        >
+    </div>
+
+    <div class="btns-modal">
+        <button type="button" id="cancelar-criar-lista" onclick="document.getElementById('modal-criar-lista').close()">
+            Cancelar
+        </button>
+
+        <button type="button" id="confirmar-criar-lista" onclick="criarLista()">
+            Criar
+        </button>
+    </div>
+</dialog>
+
 <!--Container-->
 <div class="container">
     <!--Topo-->
@@ -88,16 +153,15 @@
         <!--Logo-->
         <div class="logo">
             <?xml version="1.0" encoding="UTF-8"?>
-            <svg fill="none" viewBox="0 0 188 67" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <clipPath id="clip_path_1">
-                        <rect width="50" height="50"/>
-                    </clipPath>
-                </defs>
-                <g transform="scale(1)" clip-path="url(#clip_path_1)">
-                    <path transform="translate(2.727)"
-                          d="m44.043 15.551c-4.0418-2.0209-7.5801-9.0365-9.5446-14.929-0.0783-0.2336-0.2482-0.42637-0.4709-0.53272-0.2228-0.10635-0.48-0.11729-0.711-0.03086l-7.2728 2.7273c-0.4509 0.16914-0.6918 0.65997-0.5491 1.1191 0.2363 0.76368 0.5245 1.7691 0.8127 2.9127l-19.867 12.957s-1.0964-2.0246-1.0964-2.0246c-0.23458-0.4318-0.76818-0.6-1.2064-0.3799l-3.6364 1.8181c-0.22002 0.11-0.38633 0.3046-0.45997 0.5401-0.073634 0.2354-0.050001 0.49 0.067286 0.7063l11.709 21.615v1.5882h-2.7273c-0.50187 0-0.9091 0.4072-0.9091 0.9091v4.5454c0 0.5019 0.40723 0.9091 0.9091 0.9091h22.728c0.5018 0 0.9091-0.4072 0.9091-0.9091v-4.5455c0-0.5019-0.4074-0.9091-0.9091-0.9091h-18.182v-1.2564l3.1336-1.5673c0.2201-0.11 0.3864-0.3046 0.46-0.54 0.0736-0.2355 0.05-0.4901-0.0673-0.7064l-9.8527-18.189 19.437-12.676c0.8873 4.1728 1.4464 9.4292-0.2772 12.693-0.1737 0.3282-0.13 0.7291 0.1109 1.0127 0.1755 0.2064 0.43 0.32 0.6928 0.32 0.0964 0 0.1928-0.0154 0.2873-0.0464 0 0 16.364-5.4546 16.364-5.4546 0.3481-0.1164 0.5927-0.4319 0.619-0.7982s-0.171-0.7127-0.5001-0.8772z"
-                          fill="#383838"/>
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg width="167.012" height="50" viewBox="0 0 167.012 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M7.84863 39.6L7.84863 16.6693L1.08105 16.6693L1.08105 13.1361L18.6855 13.1361L18.6855 16.6693L11.8477 16.6693L11.8477 39.6L7.84863 39.6ZM25.7733 39.9604Q23.5761 39.9604 21.6864 38.9145Q19.7968 37.8686 18.6454 35.9262Q17.494 33.9838 17.494 31.2855Q17.494 28.6928 18.4872 26.7504Q19.4804 24.808 21.2909 23.727Q23.1102 22.6459 25.6327 22.6459Q27.1444 22.6459 28.3837 23.1732Q29.6317 23.6918 30.4755 24.4301Q31.3192 25.1684 31.6093 25.8451L31.6796 23.0766L35.3886 23.0766L35.3886 39.6L31.7147 39.6L31.6444 36.682Q31.2841 37.473 30.4315 38.2289Q29.5878 38.9848 28.4013 39.477Q27.2147 39.9604 25.7733 39.9604ZM26.4237 36.7172Q27.7597 36.7172 28.8495 36.0932Q29.9481 35.4604 30.6161 34.309Q31.2841 33.1576 31.2841 31.5756L31.2841 31.3207Q31.2841 29.7035 30.6161 28.4994Q29.9481 27.2865 28.8495 26.6273Q27.7597 25.9594 26.4237 25.9594Q24.0155 25.9594 22.8026 27.5062Q21.5985 29.0531 21.5985 31.3207Q21.5985 33.6234 22.8026 35.1703Q24.0155 36.7172 26.4237 36.7172ZM45.7561 39.9604Q44.6048 39.9604 43.3567 39.7406Q42.1175 39.5297 41.0891 39.1869Q40.0696 38.8441 39.5247 38.4486L40.8255 35.39Q41.4319 35.8207 42.6712 36.3656Q43.9192 36.9018 45.7561 36.9018Q47.3733 36.9018 47.9446 36.4184Q48.5247 35.9262 48.5247 35.2758Q48.5247 34.599 48.0413 34.2211Q47.5579 33.8432 46.6526 33.518Q45.7561 33.1928 44.5345 32.727Q43.3479 32.2172 42.2669 31.558Q41.1858 30.89 40.5179 29.8969Q39.8499 28.9037 39.8499 27.4711Q39.8499 25.1244 41.6516 23.8852Q43.4534 22.6459 46.4065 22.6459Q47.9182 22.6459 49.3333 22.9711Q50.7571 23.2963 51.4778 23.7973L50.0804 26.891Q49.6409 26.4604 48.6477 26.1Q47.6634 25.7396 46.2923 25.7396Q43.7434 25.7396 43.7434 27.2865Q43.7434 28.0424 44.2972 28.4994Q44.8597 28.9477 45.7737 29.2553Q46.6878 29.5541 47.7688 29.9848Q49.9661 30.8549 51.135 31.9887Q52.304 33.1225 52.304 34.9945Q52.304 36.682 51.4075 37.7982Q50.511 38.9145 49.0169 39.4418Q47.5227 39.9604 45.7561 39.9604ZM56.1214 39.6L56.1214 13.1361L59.8304 13.1361L59.8304 27.6469L59.7601 30.4594L66.0618 23.0766L70.8519 23.0766L64.6204 29.9848L70.887 39.6L66.3079 39.6L62.9681 34.2035L62.0276 32.3666L59.8655 34.7045L59.8655 39.6L56.1214 39.6ZM75.0961 48.6703L78.6557 40.101L71.8178 23.0766L76.2123 23.0766L79.7368 33.5883L80.5278 36.1459L81.3276 33.5883L85.0278 23.0766L89.2817 23.0766L79.1303 48.6703L75.0961 48.6703ZM96.9841 39.9604Q95.8328 39.9604 94.5847 39.7406Q93.3455 39.5297 92.3171 39.1869Q91.2976 38.8441 90.7527 38.4486L92.0535 35.39Q92.6599 35.8207 93.8992 36.3656Q95.1472 36.9018 96.9841 36.9018Q98.6013 36.9018 99.1726 36.4184Q99.7527 35.9262 99.7527 35.2758Q99.7527 34.599 99.2693 34.2211Q98.7859 33.8432 97.8806 33.518Q96.9841 33.1928 95.7625 32.727Q94.5759 32.2172 93.4949 31.558Q92.4138 30.89 91.7459 29.8969Q91.0779 28.9037 91.0779 27.4711Q91.0779 25.1244 92.8796 23.8852Q94.6814 22.6459 97.6345 22.6459Q99.1462 22.6459 100.561 22.9711Q101.985 23.2963 102.706 23.7973L101.308 26.891Q100.869 26.4604 99.8757 26.1Q98.8914 25.7396 97.5203 25.7396Q94.9714 25.7396 94.9714 27.2865Q94.9714 28.0424 95.5252 28.4994Q96.0877 28.9477 97.0017 29.2553Q97.9158 29.5541 98.9968 29.9848Q101.194 30.8549 102.363 31.9887Q103.532 33.1225 103.532 34.9945Q103.532 36.682 102.636 37.7982Q101.739 38.9145 100.245 39.4418Q98.7507 39.9604 96.9841 39.9604Z"
+                          fill="#000000" transform="translate(62 0.32)"/>
+                    <g transform="scale(1 1)">
+                        <path d="M44.0433 15.5505C40.0015 13.5296 36.4632 6.51412 34.4987 0.62129C34.4205 0.387694 34.2505 0.194919 34.0278 0.0885699C33.805 -0.0177788 33.5478 -0.0287164 33.3168 0.0577102C33.3168 0.0577102 26.044 2.78498 26.044 2.78498C25.5931 2.95413 25.3522 3.44495 25.4949 3.90404C25.7312 4.66772 26.0194 5.6731 26.3076 6.81676C26.3076 6.81676 6.44109 19.7733 6.44109 19.7733C6.44109 19.7733 5.34469 17.7488 5.34469 17.7488C5.11012 17.317 4.57652 17.1488 4.13833 17.3688C4.13833 17.3688 0.50197 19.187 0.50197 19.187C0.281949 19.297 0.115638 19.4916 0.0420048 19.727C-0.0316286 19.9625 -0.00799537 20.2171 0.109291 20.4334C0.109291 20.4334 11.8185 42.0482 11.8185 42.0482L11.8185 43.6364C11.8185 43.6364 9.09121 43.6364 9.09121 43.6364C8.58935 43.6364 8.18212 44.0436 8.18212 44.5455C8.18212 44.5455 8.18212 49.0909 8.18212 49.0909C8.18212 49.5928 8.58935 50 9.09121 50C9.09121 50 31.8187 50 31.8187 50C32.3205 50 32.7278 49.5928 32.7278 49.0909C32.7278 49.0909 32.7278 44.5454 32.7278 44.5454C32.7278 44.0435 32.3204 43.6363 31.8187 43.6363C31.8187 43.6363 13.6367 43.6363 13.6367 43.6363L13.6367 42.3799C13.6367 42.3799 16.7703 40.8126 16.7703 40.8126C16.9903 40.7027 17.1566 40.508 17.2303 40.2726C17.3039 40.0371 17.2803 39.7825 17.163 39.5662C17.163 39.5662 7.31024 21.377 7.31024 21.377C7.31024 21.377 26.7467 8.70135 26.7467 8.70135C27.6341 12.8742 28.1932 18.1305 26.4695 21.3943C26.2959 21.7225 26.3395 22.1234 26.5804 22.407C26.7559 22.6133 27.0104 22.727 27.2732 22.727C27.3696 22.727 27.466 22.7116 27.5605 22.6806C27.5605 22.6806 43.9244 17.2259 43.9244 17.2259C44.2725 17.1095 44.5171 16.7941 44.5434 16.4278C44.5697 16.0615 44.3724 15.7151 44.0433 15.5505C44.0433 15.5505 44.0433 15.5505 44.0433 15.5505Z"
+                              fill="#000000" transform="matrix(1 0 0 1 2.727 0)"/>
+                    </g>
                 </g>
             </svg>
         </div>
@@ -125,6 +189,11 @@
             <ul id="lista-lateral"></ul>
 
             <div class="profile">
+
+                <div class="create-list">
+                    <button type="button" id="criarNovaLista">Nova lista</button>
+                </div>
+
                 <div class="wrapper">
 
                     <?xml version="1.0" encoding="utf-8"?>
@@ -229,8 +298,9 @@
                             <!-- Menu oculto -->
                             <div class="menu">
                                 <div class="submenu" id="submenu-${lista.id}">
-                                    <button type="button">Editar lista</button>
-                                    <button type="button">Excluir lista</button>
+                                    <button type="button" id="edita-lista" onclick="editarLista(${lista.id}, '${lista.nome}')">Editar lista</button>
+                                    <button type="button" onclick="excluirLista(${lista.id})">Excluir lista</button>
+                                    <input type="text" hidden value="${lista.nome}" id="lista-${lista.nome}"/>
                                 </div>
                             </div>
                         </div>
@@ -263,9 +333,10 @@
             dados.forEach(tarefa => {
                 html += `
                     <div class="card">
+
                     <div class="opts" id="opts-${tarefa.id}">
-                        <button id="editar-${tarefa.id}">Editar card</button>
-                        <button>Excluir card</button>
+                        <button id="editar-${tarefa.id}" onclick="editarTarefa(${tarefa.id})">Editar tarefa</button>
+                        <button onclick="excluirTarefa(${tarefa.id})">Excluir card</button>
                     </div>
 
                     <div class="titulo">
@@ -301,15 +372,21 @@
                             <div class="lista">
                                 ${tarefa.lista.nome}
                             </div>
-                            <span>${new Date(tarefa.data + "T12:00:00").toLocaleString("pt-BR", {
+                            <span>${tarefa.data != null ? new Date(tarefa.data + "T12:00:00").toLocaleString("pt-BR", {
                     day: "numeric",
                     month: "long",
                     year: "numeric"
-                })}</span>
+                }) : "Sem data"}</span>
                         </div>
 
                         <div class="check">
-                            <input type="checkbox" id="concluir-${tarefa.id}">
+                            <input
+                                type="checkbox"
+                                id="concluir-${tarefa.id}"
+                                ${tarefa.status ? "checked" : ""}
+                                onchange="alterarStatusTarefa(${tarefa.id}, this)"
+                            >
+
                             <label for="concluir-${tarefa.id}">Concluída</label>
                         </div>
                     </div>
@@ -400,23 +477,14 @@
         });
     }
 
-    const exibirMensagem = (tipo, mensagem) => {
-        const aviso = {
-            corTexto,
-            corFundo
-        }
-
-        if (tipo === "erro") {
-            aviso.corFundo = "var(--color-red)";
-            aviso.corTexto = "var(--color-white)";
-        } else {
-            aviso.corFundo = "none";
-            aviso.corTexto = "none";
-        }
-    }
-
     const btnNovaTarefa = document.getElementById("novo-item");
+
     btnNovaTarefa.addEventListener("click", () => {
+        idTarefaEditando = null;
+        document.getElementById("titulo").value = "";
+        document.getElementById("descricao").value = "";
+        document.getElementById("data").value = "";
+        document.querySelector("#modal-item .title h1").textContent = "Nova tarefa";
         document.getElementById("modal-item").showModal();
     });
 
@@ -427,8 +495,12 @@
 
     const btnSalvarNovaTarefa = document.getElementById("salvar");
     btnSalvarNovaTarefa.addEventListener("click", () => {
-        cadastrarTarefa();
-    })
+        if (idTarefaEditando !== null) {
+            editarTarefaSalvar();
+        } else {
+            cadastrarTarefa();
+        }
+    });
 
     const btnFazerLogout = document.getElementById("logout");
     btnFazerLogout.addEventListener("click", () => {
@@ -450,25 +522,314 @@
     function submenu(elemento) {
         let id = elemento.getAttribute("id");
         let submenu = elemento.querySelector(`#submenu-${id}`);
-
         submenu.classList.toggle("aberto");
     }
 
-    const deletarTarefa = (idTarefa) => {
-        fetch(`http://localhost:8080/tarefas/${idTarefa}`, {
+    let nomeAntigoLista = "";
+
+    function editarLista(idLista, nomeLista) {
+        let modalEditar = document.getElementById('modal-editar-lista');
+        modalEditar.showModal();
+        let nomeListaInput = document.getElementById('nome-lista');
+        nomeListaInput.value = `${nomeLista}`;
+        nomeAntigoLista = nomeLista;
+    }
+
+    let idListaExcluir;
+
+    function excluirLista(idLista) {
+        let modalExcluir = document.getElementById('modal-excluir');
+        modalExcluir.showModal();
+        document.getElementById('idLista-Excluir').value = idLista;
+        idListaExcluir = Number(idLista);
+    }
+
+    const btnConfirmarDeleteLista = document.getElementById("confirmar-excluir-lista");
+    btnConfirmarDeleteLista.addEventListener("click", () => {
+        deletarLista(idListaExcluir);
+    })
+
+    const btnCancelarEdicaoLista = document.getElementById('cancelar-editar-lista');
+    btnCancelarEdicaoLista.addEventListener("click", () => {
+        document.getElementById('modal-editar-lista').close();
+    })
+
+    function atualizar(nomeAntigo) {
+        let nomeNovo = document.getElementById("nome-lista").value.trim();
+
+        if (nomeAntigo == null) {
+            console.error("Nome inválido!");
+            return;
+        }
+
+        fetch(`http://localhost:8080/listas?nome=${nomeAntigo}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((resposta) => {
+
+            if (!resposta.ok) {
+                return resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+
+            return resposta.json();
+        }).then((dados) => {
+
+            const listaAntiga = {}
+
+            if (dados) {
+                listaAntiga.id = dados.id;
+            }
+
+            fetch(`http://localhost:8080/listas/${listaAntiga.id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id: Number(listaAntiga.id),
+                    nome: nomeNovo
+                }),
+            }).then((resposta) => {
+                if (!resposta.ok) {
+                    return resposta.text().then((texto) => {
+                        console.error(texto);
+                    });
+                }
+
+                return resposta.json();
+            }).then((dados) => {
+                if (dados) {
+                    console.log(dados);
+                }
+                window.location.reload();
+            })
+        }).catch((erro) => {
+            console.error("Ocorreu um erro: " + erro);
+            throw new Error("Ocorreu um erro: " + erro);
+        })
+    }
+
+    const btnSalvarEdicaoLista = document.getElementById('salvar-edicao-lista');
+    btnSalvarEdicaoLista.addEventListener("click", () => atualizar(nomeAntigoLista));
+
+    document.getElementById('confirmar-excluir-lista').addEventListener("click", () => {
+        deletarLista(idListaExcluir);
+    })
+
+    const deletarLista = (idListaExcluir) => {
+        fetch(`http://localhost:8080/listas/${idListaExcluir}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
             }
         }).then((resposta) => {
-            if (resposta.status !== 200) {
+            if (!resposta.ok) {
+                return resposta.text().then((texto) => {
+                    console.error(texto);
+                });
             }
+            return resposta.json();
         }).then((dados) => {
             console.log(dados);
         }).catch((erro) => {
             console.error("Ocorreu um erro: " + erro);
             throw new Error("Ocorreu um erro: " + erro);
         })
+    }
+
+    const btnCriarNovaLista = document.getElementById("criarNovaLista");
+    btnCriarNovaLista.addEventListener("click", () => {
+        document.getElementById('modal-criar-lista').showModal();
+    })
+
+    function criarLista() {
+        const nome = document.getElementById("nome-lista-criar").value.trim();
+        const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+
+        if (nome === "") {
+            console.error("O nome da lista não pode ser vazio!");
+            return;
+        }
+
+        fetch("http://localhost:8080/listas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome: nome,
+                usuario: {
+                    id: usuario.id
+                }
+            })
+        }).then((resposta) => {
+            if (!resposta.ok) {
+                throw new Error(`Erro: ${resposta.status}`);
+            }
+            return resposta.json();
+        }).then((dados) => {
+            console.log("Lista criada:", dados);
+            location.reload();
+        }).catch((erro) => {
+            console.error("Ocorreu um erro ao criar a lista:", erro);
+        });
+    }
+
+    function toggle(botao) {
+        const card = botao.closest(".card");
+        const submenu = card.querySelector(".opts");
+        submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+
+
+    let idTarefaEditando = null;
+
+    function editarTarefa(idTarefa) {
+        idTarefaEditando = idTarefa;
+        fetch(`http://localhost:8080/tarefas/${idTarefa}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(resposta => {
+            if (!resposta.ok) {
+                throw new Error(`Erro: ${resposta.status}`);
+            }
+            return resposta.json();
+        }).then(dados => {
+
+            const tarefa = dados;
+            document.getElementById("titulo").value = tarefa.titulo;
+            document.getElementById("descricao").value = tarefa.descricao;
+            document.getElementById("data").value = tarefa.data ?? "";
+            document.getElementById("lista").value = tarefa.lista.nome;
+            document.querySelector("#modal-item .title h1").textContent = "Editar tarefa";
+            document.getElementById("modal-item").showModal();
+
+        }).catch(erro => {
+            console.error("Erro ao buscar tarefa:", erro);
+        });
+    }
+
+    function editarTarefaSalvar() {
+        const titulo = document.getElementById("titulo").value.trim();
+        const descricao = document.getElementById("descricao").value.trim();
+        const data = document.getElementById("data").value;
+        const nomeLista = document.getElementById("lista").value.trim();
+
+        if (idTarefaEditando === null) {
+            console.error("Nenhuma tarefa selecionada para edição.");
+            return;
+        }
+
+        if (titulo === "" || titulo.length < 3) {
+            console.error("Título inválido!");
+            return;
+        }
+
+        if (nomeLista === "") {
+            console.error("Nenhuma lista selecionada!");
+            return;
+        }
+
+        fetch(`http://localhost:8080/listas?nome=${encodeURIComponent(nomeLista)}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(resposta => {
+            if (!resposta.ok) {
+                throw new Error(`Erro ao buscar lista: ${resposta.status}`);
+            }
+            return resposta.json();
+        }).then(lista => {
+            const dadosTarefa = {
+                titulo: titulo,
+                descricao: descricao,
+                data: data === "" ? null : data,
+                lista: {
+                    id: lista.id
+                }
+            };
+
+            return fetch(`http://localhost:8080/tarefas/${idTarefaEditando}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dadosTarefa)
+            });
+        }).then(resposta => {
+
+            if (!resposta.ok) {
+                throw new Error(`Erro ao atualizar tarefa: ${resposta.status}`);
+            }
+
+            return resposta.json();
+        }).then(tarefaAtualizada => {
+            console.log("Tarefa atualizada:", tarefaAtualizada);
+            document.getElementById("modal-item").close();
+            idTarefaEditando = null;
+            update();
+        }).catch(erro => {
+            console.error("Erro ao atualizar tarefa:", erro);
+        });
+    }
+
+    function alterarStatusTarefa(idTarefa, checkbox) {
+        const concluida = checkbox.checked;
+        const card = checkbox.closest(".card");
+
+        fetch(`http://localhost:8080/tarefas/${idTarefa}/status`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                status: concluida
+            })
+        }).then(resposta => {
+            if (!resposta.ok) {
+                throw new Error(`Erro: ${resposta.status}`);
+            }
+
+            return resposta.json();
+        }).then(tarefaAtualizada => {
+
+            console.log("Status atualizado:", tarefaAtualizada);
+
+            if (tarefaAtualizada.status) {
+                card.classList.add("tarefa-concluida");
+            } else {
+                card.classList.remove("tarefa-concluida");
+            }
+
+        }).catch(erro => {
+            console.error("Erro ao atualizar status:", erro);
+            checkbox.checked = !concluida;
+        });
+    }
+
+    function excluirTarefa(idTarefa) {
+        const confirmar = confirm("Tem certeza que deseja excluir esta tarefa?");
+        if (!confirmar) {
+            return;
+        }
+        fetch(`http://localhost:8080/tarefas/${idTarefa}`, {
+            method: "DELETE"
+        }).then(resposta => {
+            if (!resposta.ok) {
+                throw new Error(`Erro ao excluir tarefa: ${resposta.status}`);
+            }
+            console.log("Tarefa excluída com sucesso.");
+            update();
+        }).catch(erro => {
+            console.error("Erro ao excluir tarefa:", erro);
+        });
     }
 </script>
 </body>

@@ -17,7 +17,11 @@
 
     body {
         padding: 2%;
-        background-color: var(--color-light-green);
+        background-image: url("../images/pexels-roman-odintsov-8355744.avif");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-size: cover;
     }
 
     .container {
@@ -44,7 +48,7 @@
         border: none;
         padding: 10px 20px;
         border-radius: 50px;
-        background-color: #B3E8C1;
+        background-color: var(--color-accent);
         transition: 180ms ease-in-out;
     }
 
@@ -179,16 +183,15 @@
     }
 
     .menu-btn .submenu > button:nth-child(2) {
-        color: #FF6366;
+        color: var(--color-red-text);
     }
 
     .lista-lateral ul li {
         list-style: none;
-        margin: 5% 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-left: 12px;
+        margin: 5% 0 5% 12px;
     }
 
     .lista-lateral ul li .item {
@@ -328,7 +331,7 @@
 
 
     .cartoes .card .opts button:nth-child(2) {
-        color: #FF6366;
+        color: var(--color-red-text);
     }
 
     .cartoes .card .outros .colors .lista {
@@ -370,22 +373,42 @@
         cursor: pointer;
     }
 
+    .tarefa-concluida .titulo span,
+    .tarefa-concluida .conteudo-card p {
+        text-decoration: line-through;
+        opacity: 0.6;
+    }
+
     .buts button:nth-child(1) {
-        border: 1px solid #FF6366;
+        border: 1px solid var(--color-red-text);
         background-color: var(--color-white);
         color: #FF6366;
         font-weight: bold;
     }
 
     .buts button:nth-child(2) {
-        border: 1px solid #B3E8C1;
-        background-color: #B3E8C1;
+        border: 1px solid var(--color-accent);
+        background-color: var(--color-accent);
         color: var(--color-dark);
         font-weight: bold;
     }
 
     .mini-modal {
-        height: 30vh;
+        height: 35vh;
+        margin-top: 15%;
+        flex-direction: column;
+    }
+
+    .check {
+        user-select: none;
+        display: flex;
+        align-content: center;
+    }
+
+    .check input {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
     }
 
     .modal-item .modal-body .title {
@@ -469,31 +492,85 @@
         font-weight: bold;
     }
 
+    .mini-modal .input-modal {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .mini-modal .input-modal input {
+        padding: 10px;
+        border-radius: 16px;
+        border: none;
+        background-color: #e8e8e8;
+        outline: 1px solid var(--color-dark);
+    }
+
+    .mini-modal .btns-modal {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 10%;
+    }
+
+    .mini-modal .btns-modal button {
+        margin: 0 10px;
+        width: 120px;
+        padding: 5px;
+        border-radius: 16px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .create-list {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+
+    .create-list button {
+        background-color: var(--color-accent);
+        color: var(--color-dark);
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 10px;
+        border: none;
+        border-radius: 16px;
+        width: 100%;
+    }
+
+    .create-list button:active {
+        transform: scale(1.01, 1.01);
+    }
+
+    .mini-modal .btns-modal button:nth-child(1) {
+        border: 1px solid var(--color-red-text);
+        color: var(--color-red-text);
+        background-color: var(--color-white);
+    }
+
+    .mini-modal .btns-modal button:nth-child(2) {
+        border: 1px solid var(--color-accent);
+        color: var(--color-dark);
+        background-color: var(--color-accent);
+    }
+
     .modal-item .buttons button:nth-child(1) {
-        color: #FF6366;
+        color: var(--color-red-text);
     }
 
     .modal-item .buttons button:nth-child(1):hover {
-        border: 1px solid #FF6366;
+        border: 1px solid var(--color-red-text);
     }
 
     .modal-item .buttons button:nth-child(2) {
         color: #383838;
-        background-color: #B3E8C1;
+        background-color: var(--color-accent);
     }
 
     .modal-item .buttons button:nth-child(2):hover {
-        background-color: #b3e8c1c8;
-    }
-
-    #item-1 {
-        background-color: #7D87FF;
-        height: 25px;
-        width: 25px;
-        border-radius: 50px;
-    }
-
-    .opts {
-        display: none;
+        background-color: #ffd230;
+        transform: scale(1.01, 1.01);
     }
 }

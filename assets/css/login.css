@@ -70,7 +70,7 @@
     }
 
     .btn-login button:hover {
-        background-color: #ffd230;
+        background-color: var(--color-accent);
     }
 
     #messages {
@@ -305,13 +305,18 @@
     }
 
     .btn-login button {
-        border: 1px solid #FFBA00;
-        background-color: #FFBA00;
+        border: 1px solid var(--color-accent);
+        background-color: var(--color-accent);
         width: 100%;
         padding: 12px;
         border-radius: 16px;
         font-weight: bold;
         transition: 180ms ease-in-out;
+    }
+
+    .btn-login button:hover {
+        background-color: #ffd230;
+        transform: scale(1.01, 1.01);
     }
 
     #messages {
