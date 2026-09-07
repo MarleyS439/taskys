@@ -52,7 +52,7 @@
     }
 
     .inputs .input .wrap:has(input:focus) {
-        outline: 1px solid var(--color-accent);
+        outline: 1px solid var(--color-dark);
     }
 
     .btn-login {
@@ -63,7 +63,7 @@
         border: 1px solid var(--color-accent);
         background-color: var(--color-accent);
         width: 100%;
-        padding: 8px;
+        padding: 12px;
         border-radius: 16px;
         font-weight: bold;
         transition: 180ms ease-in-out;
@@ -145,7 +145,7 @@
         border: 1px solid var(--color-accent);
         background-color: var(--color-accent);
         width: 100%;
-        padding: 8px;
+        padding: 12px;
         border-radius: 16px;
         font-weight: bold;
         transition: 180ms ease-in-out;
@@ -226,7 +226,7 @@
         border: 1px solid var(--color-accent);
         background-color: var(--color-accent);
         width: 100%;
-        padding: 8px;
+        padding: 12px;
         border-radius: 16px;
         font-weight: bold;
         transition: 180ms ease-in-out;
@@ -297,7 +297,7 @@
     }
 
     .inputs .input .wrap:has(input:focus) {
-        outline: 1px solid var(--color-accent);
+        outline: 1px solid var(--color-dark);
     }
 
     .btn-login {
@@ -305,21 +305,18 @@
     }
 
     .btn-login button {
-        border: 1px solid var(--color-accent);
-        background-color: var(--color-accent);
+        border: 1px solid #FFBA00;
+        background-color: #FFBA00;
         width: 100%;
-        padding: 8px;
+        padding: 12px;
         border-radius: 16px;
         font-weight: bold;
         transition: 180ms ease-in-out;
     }
 
-    .btn-login button:hover {
-        background-color: #ffd230;
-    }
-
     #messages {
         color: var(--color-red-text);
         margin: 5% 0;
+        text-align: center;
     }
 }

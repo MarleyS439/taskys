@@ -1,13 +1,16 @@
 @import url('default.css');
 
 /*Estilos para telas até 480px de largura*/
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+}
 
 /*Estilos para telas mínimas de 481px até 767px de largura*/
-@media screen and (min-width: 481px) and (max-width: 767px) {}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
 
 /*Estilos para telas mínimas de 768px até 1023px*/
-@media screen and (min-width: 768px) and (max-width: 1023px) {}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
 
 /*Estilos para telas mínimas de 1024px*/
 @media screen and (min-width: 1024px) {
@@ -64,6 +67,62 @@
         border-radius: 25px;
     }
 
+    .lista-lateral {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        padding: 10%;
+    }
+
+    .profile .informacoes {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile .wrapper span {
+        margin-left: 5px;
+    }
+
+    .profile .logout {
+        display: flex;
+        width: 100%;
+        margin: 10px 0;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        padding: 10px;
+    }
+
+    .profile .logout button {
+        width: 100%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-white);
+        transition: 180ms ease-in-out;
+    }
+
+    .profile .logout button:active {
+        transform: scale(1.1, 1.1);
+    }
+
+    .profile .logout button span {
+        color: #FF6366;
+        font-size: 1rem;
+        font-weight: bold;
+    }
 
     .lista-lateral ul {
         padding: 2% 5%;
@@ -71,27 +130,56 @@
 
     .menu-btn {
         position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-btn:active {
+        transform: scale(1.1, 1.1);
+    }
+
+    .submenu {
+        display: none;
+    }
+
+    .submenu.aberto {
+        display: flex;
     }
 
     .menu-btn .submenu {
         position: absolute;
-        display: flex;
-        top: 25px;
+        width: 10vw;
+        top: 28px;
+        z-index: 10;
+        left: -8vw;
+        background-color: var(--color-white);
+        padding: 10px;
+        flex-direction: column;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
-    .menu-btn .submenu>div {
+    .menu-btn .submenu > button {
         display: flex;
+        cursor: pointer;
         flex-direction: column;
         padding: 10px;
-        border: 1px solid red;
-    }
-
-    .menu-btn .submenu>div button {
-        padding: 5px;
-        color: #383838;
-        font-weight: bold;
+        margin: 5px 0;
+        border-radius: 16px;
         background-color: var(--color-white);
         border: none;
+    }
+
+    .menu-btn .submenu > button:hover {
+        font-weight: bold;
+    }
+
+    .menu-btn .submenu > button:nth-child(1) {
+        color: var(--color-dark);
+    }
+
+    .menu-btn .submenu > button:nth-child(2) {
+        color: #FF6366;
     }
 
     .lista-lateral ul li {
@@ -159,7 +247,7 @@
         background-color: var(--color-light-yellow);
         padding: 2% 3%;
         border-radius: 25px;
-        box-shadow: 0px 0px 5px #00000060;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -226,7 +314,7 @@
     .cartoes .card .opts button {
         border: none;
         padding: 5px;
-        margin: 10px 0;
+        margin: 12px 0;
         background-color: var(--color-white);
         display: flex;
         justify-content: flex-start;
@@ -247,7 +335,7 @@
         display: flex;
     }
 
-    .cartoes .card .outros .colors .lista>div {
+    .cartoes .card .outros .colors .lista > div {
         margin-right: 5px;
     }
 
@@ -264,6 +352,40 @@
         padding: 2%;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .buts {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    .buts button {
+        margin: 0 10px;
+        padding: 5px 10px;
+        border: 1px solid var(--color-white);
+        border-radius: 16px;
+        width: 120px;
+        cursor: pointer;
+    }
+
+    .buts button:nth-child(1) {
+        border: 1px solid #FF6366;
+        background-color: var(--color-white);
+        color: #FF6366;
+        font-weight: bold;
+    }
+
+    .buts button:nth-child(2) {
+        border: 1px solid #B3E8C1;
+        background-color: #B3E8C1;
+        color: var(--color-dark);
+        font-weight: bold;
+    }
+
+    .mini-modal {
+        height: 30vh;
     }
 
     .modal-item .modal-body .title {
@@ -306,12 +428,12 @@
         gap: 10px;
     }
 
-    .modal-item .modal-body .col>div {
+    .modal-item .modal-body .col > div {
         display: flex;
         flex-direction: column;
     }
 
-    .modal-item .modal-body .col>div input,
+    .modal-item .modal-body .col > div input,
     select {
         padding: 10px 15px;
         border-radius: 25px;
@@ -320,7 +442,7 @@
         margin-right: 5px;
     }
 
-    .modal-item .modal-body .col>div input[type="date"] {
+    .modal-item .modal-body .col > div input[type="date"] {
         background-color: #e8e8e8;
     }
 
