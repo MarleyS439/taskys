@@ -21,6 +21,7 @@ O Taskys é um projeto individual de lista de tarefas (to-do list), com um front
 
 **Back-end**
 - API REST em Spring Boot (Java) — consumida em `http://localhost:8080`
+- Repositório: [taskys-api](https://github.com/MarleyS439/taskys-api)
 - Endpoints principais utilizados:
     - `POST /usuarios/login`
     - `GET /listas/usuarios/{idUsuario}`
@@ -51,8 +52,12 @@ taskys/
    git clone https://github.com/MarleyS439/taskys.git
    ```
 2. Suba a API back-end em Spring Boot na porta `8080` (repositório separado da API).
-3. Abra o arquivo `login.html` em um navegador (ou sirva a pasta com um servidor local, como a extensão *Live Server* do VS Code).
+3. Rode o front-end com o **Live Server** (extensão do VS Code), abrindo o arquivo `login.html` — o projeto depende de um servidor local para funcionar corretamente, não abra o HTML direto pelo navegador (`file://`).
 4. Faça login com um usuário já cadastrado na API para acessar a tela de tarefas.
+
+## Projeto relacionado
+
+- Back-end (API): [taskys-api](https://github.com/MarleyS439/taskys-api)
 
 ## Licença
 
